@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style for the card container */
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #f5f5f5;
+      max-width: 400px;
+    }
+
+    /* Style for the collapse icon */
+    .collapse-icon {
+      float: right;
+      cursor: pointer;
+      font-size: 24px;
+      color: #333;
+    }
+
+    /* Style for the card title */
+    .card-title {
+      font-size: 24px;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Style for the content that can be collapsed */
+    .collapse-content {
+      display: none; /* Initially hidden */
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3 class="card-title">Card Title</h3>
+    <div class="collapse-icon" onclick="toggleCollapse(this)"><i class="bi bi-caret-down-fill"></i></div>
+    <div class="collapse-content">
+      <p>This is the content that can be collapsed or expanded.</p>
+      <p>You can add more text or elements here.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleCollapse(icon) {
+      const content = icon.nextElementSibling;
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        icon.innerHTML = `<i class="bi bi-caret-up-fill"></i>`; // Change to an "up" arrow when expanded
+      } else {
+        content.style.display = 'none';
+        icon.innerHTML = `<i class="bi bi-caret-down-fill"></i>`; // Change back to a "down" arrow when collapsed
+      }
+    }
+  </script>
+</body>
+</html>
